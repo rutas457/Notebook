@@ -17,6 +17,8 @@ public class Model {
     private String mobilePhoneNumber;
     private String secondMobilePhoneNumber;
 
+    private Status status;
+
     private String email;
     private String skype;
 
@@ -24,6 +26,16 @@ public class Model {
 
     private Date creationDate;
     private Date changeDate;
+
+    public Status getStatus() {
+        return status;
+    }
+
+    public void setStatus() {
+        if(nickname.equals("admin"))
+            this.status = Status.ADMIN;
+        else this.status = Status.USER;
+    }
 
     public String getName() {
         return name;

@@ -3,7 +3,6 @@ package main.java.com.training.controller;
 import main.java.com.training.model.Model;
 import main.java.com.training.view.View;
 
-import java.time.Instant;
 import java.util.Date;
 import java.util.Scanner;
 
@@ -40,6 +39,7 @@ public class Controller {
                 inputNoteNoteBook.getHouseNumber() + " ",
                 inputNoteNoteBook.getApartmentNumber() + " "
         ));
+        model.setStatus();
         model.setCreationDate(new Date(System.currentTimeMillis()));
         model.setChangeDate(new Date(System.currentTimeMillis()));
 
