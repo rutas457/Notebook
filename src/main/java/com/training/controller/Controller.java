@@ -1,6 +1,8 @@
 package main.java.com.training.controller;
 
 import main.java.com.training.model.Model;
+import main.java.com.training.model.entity.DBLogin;
+import main.java.com.training.model.entity.NotUniqueException;
 import main.java.com.training.view.View;
 
 import java.util.Date;
@@ -25,7 +27,9 @@ public class Controller {
         model.setName(inputNoteNoteBook.getName());
         model.setPatronymic(inputNoteNoteBook.getPatronymic());
         model.setSurname(inputNoteNoteBook.getSurname());
+
         model.setNickname(inputNoteNoteBook.getNickname());
+
         model.setComment(inputNoteNoteBook.getComment());
         model.setHomePhoneNumber(inputNoteNoteBook.getHomePhoneNumber());
         model.setMobilePhoneNumber(inputNoteNoteBook.getMobilePhoneNumber());
@@ -46,3 +50,4 @@ public class Controller {
         System.out.println(model.toString());
     }
 }
+

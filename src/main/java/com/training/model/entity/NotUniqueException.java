@@ -6,4 +6,5 @@ public class NotUniqueException extends Exception {
         super(message);
         printStackTrace();
     }
+
 }

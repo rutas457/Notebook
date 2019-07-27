@@ -8,16 +8,16 @@ public enum DBLogin {
     NOTE_TWO("admin"),
     NOTE_THREE("qwerty");
 
-    private String login;
 
+    private String login;
     DBLogin(String login) {
         this.login = login;
     }
 
     public static void isAlreadyTaken(String login) throws NotUniqueException {
-        for (DBLogin usedLogin : DBLogin.values()) {
-            if (login.equals(usedLogin)) {
-                throw new NotUniqueException(View.bundle.getString(Messages.NOT_UNIQUE_OUT));
+        for (DBLogin note : DBLogin.values()) {
+            if (note.login.equals(login)) {
+                throw new NotUniqueException(Messages.NOT_UNIQUE_OUT);
             }
         }
     }

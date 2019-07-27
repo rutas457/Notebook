@@ -1,8 +1,11 @@
 package main.java.com.training.controller;
 
+import main.java.com.training.model.entity.DBLogin;
+import main.java.com.training.model.entity.NotUniqueException;
 import main.java.com.training.view.View;
 
 import java.util.Scanner;
+
 import main.java.com.training.view.Messages;
 
 public class InputNoteNotebook {
@@ -42,13 +45,21 @@ public class InputNoteNotebook {
         this.surname =
                 utilityController.inputStringValueWithScanner
                         (Messages.INPUT_SURNAME, Regex.NAME);
-        this.nickname =
-                utilityController.inputStringValueWithScanner
-                        (Messages.INPUT_NICKNAME, Regex.NICKNAME);
+        while (true) {
+            try {
+                this.nickname =
+                        utilityController.inputStringValueWithScanner
+                                (Messages.INPUT_NICKNAME, Regex.NICKNAME);
+                DBLogin.isAlreadyTaken(this.nickname);
+                break;
+            } catch (NotUniqueException nu) {
+                nu.printStackTrace();
+            }
+        }
         this.comment =
                 utilityController.inputStringValueWithScanner
-                        (Messages.INPUT_COMMENT, Regex.COMMENT );
-        this.homePhoneNumber=
+                        (Messages.INPUT_COMMENT, Regex.COMMENT);
+        this.homePhoneNumber =
                 utilityController.inputStringValueWithScanner
                         (Messages.INPUT_HOME_PHONE_NUMBER, Regex.PHONE_NUMBER);
         this.mobilePhoneNumber =
@@ -59,8 +70,8 @@ public class InputNoteNotebook {
                         (Messages.INPUT_SECOND_MOBILE_PHONE_NUMBER, Regex.PHONE_NUMBER_OPTIONAL);
         this.email =
                 utilityController.inputStringValueWithScanner
-                        (Messages.INPUT_EMAIL, Regex.EMAIL );
-        this.skype=
+                        (Messages.INPUT_EMAIL, Regex.EMAIL);
+        this.skype =
                 utilityController.inputStringValueWithScanner
                         (Messages.INPUT_SKYPE, Regex.SKYPE);
         this.index =
