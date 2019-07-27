@@ -28,4 +28,6 @@ public class Messages {
     public static final String INPUT_APARTMENT_NUMBER = "input.apartment.number.data";
 
     public static final String WRONG_INPUT = "input.wrong.data";
+
+    public static final String NOT_UNIQUE_OUT = "output.not.unique";
 }
